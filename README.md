@@ -16,7 +16,7 @@ Follow the [community nodes installation guide](https://docs.n8n.io/integrations
 ## Credentials
 
 1. Create a MailProbe account at [mailprobe.dev](https://mailprobe.dev). See [pricing](https://mailprobe.dev/pricing/) for free and paid credits.
-2. Copy your API key, which starts with `mp_live_`, from the API keys section of your [dashboard](https://mailprobe.dev/dashboard/).
+2. Create an API key under **Developer** in your [account](https://mailprobe.dev/dashboard/#/developer). It starts with `mp_live_` and is shown only once, at creation: copy it right away.
 3. In n8n, create a **MailProbe API** credential and paste the key. The credential test reads your balance, which costs no credit.
 
 ## Usage

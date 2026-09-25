@@ -28,7 +28,7 @@ export class MailProbeApi implements ICredentialType {
 			default: '',
 			placeholder: 'mp_live_...',
 			description:
-				'Your MailProbe API key. Copy it from the API keys section of your MailProbe dashboard.',
+				'Your MailProbe API key. Create one under Developer in your MailProbe account: it is shown only once, at creation.',
 		},
 	];
 

@@ -74,7 +74,7 @@ function describeError(
 			return {
 				message: 'Invalid or missing MailProbe API key',
 				description:
-					'Check the API key in the MailProbe credential. You can copy it from your MailProbe dashboard.',
+					'Check the API key in the MailProbe credential. You can create a new one under Developer in your MailProbe account.',
 			};
 		case 'NO_CREDITS':
 			return {
