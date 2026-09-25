@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-mailprobe",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"description": "Official n8n node for MailProbe: verify email addresses in your workflows (deliverability, disposable and role-based detection).",
 	"license": "MIT",
 	"homepage": "https://mailprobe.dev",
