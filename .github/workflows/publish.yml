@@ -1,0 +1,49 @@
+# Publishes the package to npm on every version tag push, with an npm provenance
+# statement: n8n requires it for verified community nodes since May 1, 2026.
+#
+# Authentication is npm Trusted Publishing (OIDC): the package on npmjs.com trusts
+# this repository and this workflow file, so no npm token is stored anywhere.
+#
+# To release, run `npm run release` locally. It lints, builds, bumps the version,
+# updates the changelog, commits, tags and pushes; the tag push triggers this workflow.
+
+name: Publish
+
+on:
+  push:
+    tags:
+      # Matches 1.0.0, 1.2.3, 2.0.0-rc.1, etc.
+      - '*.*.*'
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    name: Publish to npm
+    runs-on: ubuntu-latest
+
+    permissions:
+      # Mints the OIDC token used by Trusted Publishing and the provenance statement.
+      id-token: write
+      contents: read
+
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 'lts/*'
+          cache: 'npm'
+
+      # No install scripts run in the job that can publish.
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Build and test
+        run: npm test
+
+      # Lints, builds, then runs `npm publish` with a provenance statement.
+      - name: Release
+        run: npm run release

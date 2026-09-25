@@ -1,0 +1,27 @@
+{
+	"node": "n8n-nodes-mailprobe",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Communication", "Utility"],
+	"alias": [
+		"email verification",
+		"email validation",
+		"email verifier",
+		"email checker",
+		"bounce",
+		"deliverability",
+		"disposable email"
+	],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://github.com/jamalofski/n8n-nodes-mailprobe#credentials"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://github.com/jamalofski/n8n-nodes-mailprobe#readme"
+			}
+		]
+	}
+}

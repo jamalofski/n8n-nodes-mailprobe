@@ -1,0 +1,61 @@
+{
+	"name": "n8n-nodes-mailprobe",
+	"version": "0.0.1",
+	"description": "Official n8n node for MailProbe: verify email addresses in your workflows (deliverability, disposable and role-based detection).",
+	"license": "MIT",
+	"homepage": "https://mailprobe.dev",
+	"keywords": [
+		"n8n-community-node-package",
+		"n8n",
+		"mailprobe",
+		"email verification",
+		"email validation",
+		"email verifier",
+		"deliverability",
+		"disposable email"
+	],
+	"author": {
+		"name": "Jamal Tantaoui",
+		"email": "contact@mailprobe.dev"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jamalofski/n8n-nodes-mailprobe.git"
+	},
+	"bugs": {
+		"url": "https://github.com/jamalofski/n8n-nodes-mailprobe/issues"
+	},
+	"scripts": {
+		"build": "n8n-node build",
+		"build:watch": "tsc --watch",
+		"dev": "n8n-node dev",
+		"lint": "n8n-node lint",
+		"lint:fix": "n8n-node lint --fix",
+		"test": "n8n-node build && node --test test/*.test.js",
+		"release": "n8n-node release",
+		"prepublishOnly": "n8n-node prerelease"
+	},
+	"files": [
+		"dist"
+	],
+	"n8n": {
+		"n8nNodesApiVersion": 1,
+		"strict": true,
+		"credentials": [
+			"dist/credentials/MailProbeApi.credentials.js"
+		],
+		"nodes": [
+			"dist/nodes/MailProbe/MailProbe.node.js"
+		]
+	},
+	"devDependencies": {
+		"@n8n/node-cli": "^0.49.1",
+		"eslint": "9.32.0",
+		"prettier": "3.6.2",
+		"release-it": "^19.0.4",
+		"typescript": "5.9.2"
+	},
+	"peerDependencies": {
+		"n8n-workflow": "*"
+	}
+}
