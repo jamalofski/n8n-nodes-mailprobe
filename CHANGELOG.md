@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1 (2026-09-25)
+
+- The npm package no longer ships the TypeScript build cache (`tsconfig.tsbuildinfo`): 35 kB unpacked instead of 243 kB. No change to the node itself.
+
 ## 1.0.0 (2026-09-25)
 
 First release.
