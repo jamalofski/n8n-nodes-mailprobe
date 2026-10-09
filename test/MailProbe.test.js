@@ -249,3 +249,13 @@ test('returns the credit balance for each input item', async () => {
 		[{ credits: 847 }, { credits: 847 }],
 	);
 });
+
+// n8n's reviewers require the full identifier, `<package name>.<node name>`, although
+// the documentation and the starter template still show the package name alone.
+test('names the node by its full identifier in the codex file', () => {
+	const codex = require('../dist/nodes/MailProbe/MailProbe.node.json');
+	const { name: packageName } = require('../package.json');
+
+	assert.equal(codex.node, `${packageName}.${new MailProbe().description.name}`);
+	assert.equal(codex.node, NODE.type);
+});
