@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.2 (2026-10-09)
+
+- The codex file names the node by its full identifier, `n8n-nodes-mailprobe.mailProbe`, as n8n's review asks.
+- The credential and the invalid key message point to **Developer** in the MailProbe account, where a key is created and shown only once.
+
 ## 1.0.1 (2026-09-25)
 
 - The npm package no longer ships the TypeScript build cache (`tsconfig.tsbuildinfo`): 35 kB unpacked instead of 243 kB. No change to the node itself.
